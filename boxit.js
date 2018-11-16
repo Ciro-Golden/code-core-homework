@@ -32,7 +32,7 @@ function drawMiddleBorder(number) { //Create a function called drawMiddleBorder 
 
 
 // ** 
-function wordSpace(n) { // create a function called wordSpace that will leave space for words inbetween
+function wordSpace(number) { // create a function called wordSpace that will leave space for words inbetween
     space = ""; // space = " "  << space inbetween  ""
     for (i = 0; i < number; i++) { // FOR LOOP used  incrase by ++  
         space += " " // the amount of space inbetween " "
@@ -58,7 +58,7 @@ function boxIt(array) {
     let lineLength = 0
     for (each of array) {
         if (each.length > lineLength) {
-            lineLength = lineLength.length;
+            lineLength = each.length;
         }
     }
 
@@ -66,11 +66,12 @@ function boxIt(array) {
         boxed += (drawTopBorder(lineLength) +
             drawBarsAround(array[0]) +
             drawBottomBorder(lineLength));
+
+
     } else if (array.length === 2) {
         boxed += (drawTopBorder(lineLength) +
             drawBarsAround(array[0], (lineLength - array[0].length)) +
             drawMiddleBorder(lineLength) +
-            drawBarsAround(array[1], (lineLength - array[1].length)) +
             drawBottomBorder(lineLength));
     } else if (array.length > 2) {
         for (let each of array) {
